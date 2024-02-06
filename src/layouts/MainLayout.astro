@@ -4,18 +4,14 @@ import MainHead from "./MainHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-// style import
-import "../styles/global.css";
-import "../styles/swiper-bundle.min.css";
-
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<MainHead />
 	<body class="bg-gray-100">
         <Header />
         <!-- page wrapper -->
-		<main class="max-w-[1920px] mx-auto bg-white overflow-hidden">
+		<main class="max-w-[1920px] mx-auto bg-white overflow-hidden" id="home">
             <!-- grid img -->
 			<div
                 class="xl:bg-grid xl:bg-center xl:bg-repeat-y fixed top-0 bottom-0 left-0 right-0 z-10"
@@ -25,9 +21,13 @@ import "../styles/swiper-bundle.min.css";
             <Footer />
         </main>
 
+        <!-- scripts -->
+        <!-- <script is:inline src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script> -->
+
+        <!-- SCROLLREVEAL -->
+        <script is:inline src="./js/scrollreveal.min.js"></script>
+
         <script>
-            //<!-- SWIPER JS -->
-            import "../js/swiper-bundle.min.js";
             //<!-- MAIN JS -->
             import "../js/utils.js";
         </script>

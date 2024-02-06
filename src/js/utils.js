@@ -8,12 +8,32 @@ navTriggerBtn.addEventListener("click", () => {
 	// console.log("clicked");
 });
 
+/*----------------------------------------*/
 // swiper
+/*----------------------------------------*/
+// NOTE: se ha instalado el paquete swiper en el package.json
+// con npm install swiper
+
+// core version + navigation, pagination modules:
+// import Swiper from "swiper";
+// import { Navigation, Pagination } from "swiper/modules";
+// import Swiper and modules styles
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
+
 const swiper = new Swiper(".swiper", {
+	// configure Swiper to use modules
+	// modules: [/* Navigation, */ Pagination],
+
 	loop: true,
 	/* autoplay: {
-		delay: 3000,
+		delay: 2500,
+		disableOnInteraction: false,
 	}, */
+	autoplay: {
+		delay: 3000,
+	},
 	pagination: {
 		el: ".swiper-pagination",
 		clickable: true,
@@ -33,3 +53,55 @@ const swiper = new Swiper(".swiper", {
 		},
 	},
 });
+
+/*----------------------------------------*/
+// scroll reveal animation
+/*----------------------------------------*/
+
+const sr = ScrollReveal({
+	origin: "bottom",
+	distance: "60px",
+	duration: 3000,
+	delay: 600,
+	// reset: true,
+});
+
+// hero
+sr.reveal(".hero__text", { origin: "top" });
+
+// steps
+sr.reveal(".steps__step", { distance: "100px", interval: 100 });
+
+// about
+sr.reveal(".about__text", { origin: "left" });
+sr.reveal(".about__img", { origin: "right", delay: 800 });
+
+// testimonials
+sr.reveal(".testimonials__bg", { delay: 800 });
+sr.reveal(".testimonials__title");
+sr.reveal(".testimonials__slider", { delay: 1500 });
+
+// brands
+sr.reveal(".brands__img", { delay: 600, distance: "100px", interval: 100 });
+
+// work
+sr.reveal(".work__title");
+sr.reveal(".work__subtitle", { delay: 800 });
+sr.reveal(".work__grid", { delay: 1000 });
+
+// stats
+sr.reveal(".stats");
+sr.reveal(".stats__item", { distance: "100px", interval: 100 });
+
+// news
+sr.reveal(".news__title");
+sr.reveal(".news__subtitle", { delay: 800 });
+sr.reveal(".news__item", { distance: "100px", interval: 100, delay: 1000 });
+
+// contact
+sr.reveal(".contact__container");
+sr.reveal(".contact__text", { delay: 800 });
+
+// footer
+sr.reveal(".footer__item", { distance: "100px", interval: 100 });
+sr.reveal(".footer__copyright");
